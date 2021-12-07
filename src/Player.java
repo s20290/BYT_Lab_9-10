@@ -15,12 +15,11 @@ public class Player {
     private Payment _payment;
     private Team _team;
 
-    public Player(String _nickName, String _email, List<Player> _friends, List<Item> _items, Team _team) {
+    public Player(String _nickName, String _email) {
         this._nickName = _nickName;
         this._email = _email;
         this._friends = new ArrayList<>();
         this._items = new ArrayList<>();
-        
     }
 
     public void removeFriend(int index){
