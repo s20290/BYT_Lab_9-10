@@ -9,12 +9,18 @@ import java.util.List;
 public class PlayerTest {
 
     Player p1,p2,p3;
+    Payment pay1,pay2;
+    Team t1,t2;
     @Before
     public void setup(){
         p1 = new Player("Rajesh","rj@gmail.com");
         p2 = new Player("Joh","joh@gmail.com");
         p3 = new Player("Kim","kim@yahoo.com");
-
+        pay1 = new Payment("item1", Payment.PaymentMethod.Transfer, new Purchase());
+        pay2 = new Payment("item2", Payment.PaymentMethod.Blik, new Purchase());
+        t1 = Team.createTeam(p1);
+        t2 = Team.createTeam(p2);
+        p1.set_team(t1);
     }
 
     //getter test for nickname
@@ -91,21 +97,38 @@ public class PlayerTest {
     //getter test for payment
     @Test
     public void getPaymentTest(){
-
+        //p1 currently has no payments
+        assertNull(p1.get_payment());
+        p1.set_payment(pay1);
+        //after setting a payment it should no longer be null
+        assertNotNull(p1.get_payment());
     }
 
+    //setter test for payment
     @Test
     public void setPaymentTest(){
-
+        //p1 currently has no payments
+        assertNull(p1.get_payment());
+        p1.set_payment(pay1);
+        //after setting a payment it should no longer be null
+        assertNotNull(p1.get_payment());
     }
+
+    //getter test for team
     @Test
     public void getTeamTest(){
-
+        //p1 belongs to t1 (team1)
+        assertEquals(t1,p1.get_team());
     }
 
+    //setter test for team
     @Test
     public void setTeamTest(){
-
+        //p1 belongs to t1 (team1)
+        assertEquals(t1,p1.get_team());
+        p1.set_team(t2);
+        //p1 now belongs to t2
+        assertEquals(t2,p1.get_team());
     }
 
 }

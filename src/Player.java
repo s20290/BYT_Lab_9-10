@@ -92,7 +92,7 @@ public class Player {
         return _team;
     }
 
-    public void set_team() {
-        this._team = Team.createTeam(this);
+    public void set_team(Team team) {
+        this._team = team;
     }
 }
