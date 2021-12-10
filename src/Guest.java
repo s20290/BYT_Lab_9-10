@@ -1,3 +1,6 @@
+
+
+
 public class Guest {
     public class RegistrationData
     {
@@ -7,17 +10,20 @@ public class Guest {
     }
 
 
+    private static int _idCounter = 0;
+
     protected int _id;
+
+
+    public Guest()
+    {
+        _id = _idCounter++;
+    }
 
 
     public int getId()
     {
         return _id;
-    }
-
-    public void setId(int id)
-    {
-        _id = id;
     }
 
 

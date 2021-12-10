@@ -7,7 +7,7 @@ _nickName is user's in-game name
 _email stores the email address the user used to register
 */
 
-public class Player {
+public class Player extends Guest {
     private String _nickName;
     private String _email;
     private List<Player> _friends;
@@ -16,6 +16,8 @@ public class Player {
     private Team _team;
 
     public Player(String _nickName, String _email) {
+        super();
+
         this._nickName = _nickName;
         this._email = _email;
         this._friends = new ArrayList<>();
