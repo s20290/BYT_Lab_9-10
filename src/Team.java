@@ -14,15 +14,16 @@ public class Team {
 
     }
 
-    private Team(Player player) {
+    private Team(String name, Player leader) {
+        this.name = name;
         id = global_id++;
-        leader = player;
-        players = new ArrayList<Player>();
-        players.add(player);
+        this.leader = leader;
+        players = new ArrayList<>();
+        players.add(leader);
     }
     
-    public static Team createTeam(Player player) {
-        return new Team(player);
+    public static Team createTeam(String name, Player player) {
+        return new Team(name, player);
     }
 
     public void addPlayerToTeam(Player player) throws IllegalArgumentException {

@@ -18,8 +18,8 @@ public class PlayerTest {
         p3 = new Player("Kim","kim@yahoo.com");
         pay1 = new Payment("item1", Payment.PaymentMethod.Transfer, new Purchase());
         pay2 = new Payment("item2", Payment.PaymentMethod.Blik, new Purchase());
-        t1 = Team.createTeam(p1);
-        t2 = Team.createTeam(p2);
+        t1 = Team.createTeam("Team1", p1);
+        t2 = Team.createTeam("Team2", p2);
         p1.set_team(t1);
     }
 

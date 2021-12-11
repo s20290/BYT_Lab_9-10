@@ -16,7 +16,7 @@ public class GuestTest {
     /*  Method getId returns ID of the guest   */
     @Test
     public void testGetId(){
-        Assert.assertEquals(0, guest1.getId());
-        Assert.assertEquals(1, guest2.getId());
+        assertEquals(0, guest1.getId());
+        assertEquals(1, guest2.getId());
     }
 }
