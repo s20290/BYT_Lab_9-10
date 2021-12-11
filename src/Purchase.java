@@ -3,6 +3,12 @@ public class Purchase {
     private Player _user;
     private double _cost;
 
+    //default constructor
+    public Purchase() {
+        _id = -1;
+        _user = null;
+        _cost = -1.0;
+    }
 
     public void purchaseItem(){
         //still empty
@@ -13,7 +19,7 @@ public class Purchase {
         return _id;
     }
 
-    public void setNUMBER(int id) {
+    public void set_id(int id) {
         this._id = id;
     }
 
