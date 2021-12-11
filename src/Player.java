@@ -37,14 +37,13 @@ public class Player extends Guest {
     }
     
 
-    //still need some thoughts
     public void joinTeam(Team team){
-        _team.addPlayerToTeam(this);
+        _team = team;
+        team.addPlayerToTeam(this);
     }
-    
-    //still need some thoughts
+
     public void exitTeam(){
-        
+        _team.getPlayers().remove(this);
     }
 
 
