@@ -22,6 +22,7 @@ public class Player extends Guest {
         this._email = _email;
         this._friends = new ArrayList<>();
         this._items = new ArrayList<>();
+        this._team = null;
     }
 
     public void removeFriend(int index){
@@ -43,7 +44,9 @@ public class Player extends Guest {
     }
 
     public void exitTeam(){
-        _team.getPlayers().remove(this);
+        if(_team != null){
+            _team.getPlayers().remove(this);
+        }
     }
 
 
