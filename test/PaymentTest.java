@@ -14,7 +14,7 @@ public class PaymentTest{
     private String[] _paymentDetailsList = {"Item One","Item Two","Item Three"};
     @Before
     public void SetUp() throws Exception {
-        //set value of parchase
+        //set value of purchase
         _purchaseA = new Purchase();
         _purchaseB = new Purchase();
         //set value of payment
@@ -75,7 +75,7 @@ public class PaymentTest{
         assertFalse( _paymentDetailsList[0].equals(_paymentA.GetPaymentDetails()));
         //Current value
         assertTrue( msg.equals(_paymentA.GetPaymentDetails()));
-        //test if a diffrent payment was modified
+        //test if a different payment was modified
         assertFalse( msg.equals(_paymentC.GetPaymentDetails()));
     }
     @Test
@@ -89,7 +89,7 @@ public class PaymentTest{
         assertNotEquals(Payment.PaymentMethod.Visa,_paymentB.GetPaymentMethod());
         //Current value
         assertEquals(Payment.PaymentMethod.Transfer,_paymentB.GetPaymentMethod());
-        //test if a diffrent payment was modified
+        //test if a different payment was modified
          assertNotEquals(Payment.PaymentMethod.Transfer,_paymentC.GetPaymentMethod());
     }
 
@@ -105,7 +105,7 @@ public class PaymentTest{
         assertNotEquals(_purchaseB,_paymentC.GetPurchase());
         //Current value
         assertEquals(purchaseC, _paymentC.GetPurchase());
-        //test if a diffrent payment was modified
+        //test if a different payment was modified
          assertNotEquals(purchaseC, _paymentB.GetPurchase());
     }
 }

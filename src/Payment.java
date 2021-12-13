@@ -15,7 +15,7 @@ public class Payment {
         this._paymentMethod = _paymentMethod;
         this._purchase = _purchase;
     }
-
+    //Payment Details
     public String GetPaymentDetails() {
         return _paymentDetails;
     }
@@ -24,6 +24,7 @@ public class Payment {
         this._paymentDetails = _paymentDetails;
     }
 
+    //Payment Method
     public PaymentMethod GetPaymentMethod() {
         return _paymentMethod;
     }
@@ -32,6 +33,7 @@ public class Payment {
         this._paymentMethod = _paymentMethod;
     }
 
+    //Purchase
     public Purchase GetPurchase() {
         return _purchase;
     }
