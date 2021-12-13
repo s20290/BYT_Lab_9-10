@@ -8,10 +8,13 @@ public class PurchaseTest {
 
     Purchase p1;
     Player player1;
+    Item item1,item2;
     @Before
     public void setup(){
         p1 = new Purchase();
         player1 = new Player("Joh","joh@gmail.com");
+        item1 = new Item("Book", "Old book", Double.valueOf("150.25"));
+        item2 = new Item("Sword", "New sharp sword", Double.valueOf("220.00"));
     }
 
     @Test
@@ -57,6 +60,22 @@ public class PurchaseTest {
         //setting cost to 1 should return 1 when we call getter
         p1.set_cost(1);
         assertEquals(1,(int)p1.get_cost());
+
+    }
+
+    @Test
+    public void getItemTest(){
+        //getItem should return item1
+        assertEquals(item1,p1.get_item());
+    }
+
+    @Test
+    public void setItemTest(){
+        //getItem should return item1
+        assertEquals(item1,p1.get_item());
+        //setting item to item2 should return item2 when we call getter
+        p1.set_item(item2);
+        assertEquals(item2,p1.get_item());
 
     }
 

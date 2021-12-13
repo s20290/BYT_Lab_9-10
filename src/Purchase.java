@@ -2,7 +2,7 @@ public class Purchase {
     private int _id;
     private Player _user;
     private double _cost;
-
+    private Item _item;
     //default constructor
     public Purchase() {
         _id = -1;
@@ -37,5 +37,13 @@ public class Purchase {
 
     public void set_cost(double cost) {
         this._cost = cost;
+    }
+
+    public Item get_item() {
+        return _item;
+    }
+
+    public void set_item(Item _item) {
+        this._item = _item;
     }
 }
