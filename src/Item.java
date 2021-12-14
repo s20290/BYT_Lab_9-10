@@ -1,42 +1,45 @@
 import java.util.Date;
+import java.math.BigDecimal;
+import java.util.Random;
 
 /*
-    _id is unique value, which is read-only 
+    _id is unique value, which is read-only
     _itemName is obtainable and editable attribute
     _description is obtainable and editable attribute
     _price is obtainable and editable attribute
 */
 
 public final class Item {
-    private static int _id;
-    private static String _itemName;
-    private static String _description;
-    private static Double _price;
+    private final int _id;
+    private String _itemName;
+    private String _description;
+    private BigDecimal _price;
+    private final Random RANDOM = new Random();
 
-    public Item(String itemName, String description, Double price) {
-        _id = (int) ((new Date().getTime() / 1000L) % Integer.MAX_VALUE);
+    public Item(String itemName, String description, BigDecimal price) {
+        _id = (int) ((new Date().getTime() / 1000L) % Integer.MAX_VALUE) + RANDOM.nextInt(100);
         _itemName = itemName;
         _description = description;
         _price = price;
     }
 
     /*  Method getId() returns ID of the Item   */
-    public static int getId() {
+    public int getId() {
         return _id;
     }
 
-    /*  Method getItemName() returns Name of the Item   */  
-    public static String getItemName() {
+    /*  Method getItemName() returns Name of the Item   */
+    public String getItemName() {
         return _itemName;
     }
 
     /*  Method getDescription() returns Description of the Item   */
-    public static String getDescription() {
+    public String getDescription() {
         return _description;
     }
 
     /*  Method getPrice() returns Price of the Item   */
-    public static Double getPrice() {
+    public BigDecimal getPrice() {
         return _price;
     }
 
@@ -55,9 +58,10 @@ public final class Item {
     }
 
     /*  Method setPrice() sets up new price for Item   */
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         if (price != null) {
             _price = price;
         }
     }
 }
+
