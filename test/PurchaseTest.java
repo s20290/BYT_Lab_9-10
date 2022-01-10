@@ -3,18 +3,28 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PurchaseTest {
 
 
     Purchase p1;
     Player player1;
     Item item1,item2;
+    List<Item> items;
     @Before
     public void setup(){
         p1 = new Purchase();
+        items = new ArrayList<>();
         player1 = new Player("Joh","joh@gmail.com");
-        item1 = new Item("Book", "Old book", Double.valueOf("150.25"));
-        item2 = new Item("Sword", "New sharp sword", Double.valueOf("220.00"));
+
+        item1 = new Item("Book", "Old book", new BigDecimal("150.25"));
+        item2 = new Item("Sword", "New sharp sword", new BigDecimal("220.00"));
+        items.add(item1);
+        items.add(item2);
+        p1.set_item(items);
     }
 
     @Test
@@ -66,16 +76,18 @@ public class PurchaseTest {
     @Test
     public void getItemTest(){
         //getItem should return item1
-        assertEquals(item1,p1.get_item());
+        assertEquals(items,p1.get_item());
     }
 
     @Test
     public void setItemTest(){
-        //getItem should return item1
-        assertEquals(item1,p1.get_item());
-        //setting item to item2 should return item2 when we call getter
-        p1.set_item(item2);
-        assertEquals(item2,p1.get_item());
+        //getItem should return list of items
+        assertEquals(items,p1.get_item());
+        //setting item to tmp should return tmp when we call getter
+        List<Item> tmp = new ArrayList<>();
+        p1.set_item(tmp);
+        //tmp is not the same as items so this should not be equal
+        assertNotEquals(items,p1.get_item());
 
     }
 
